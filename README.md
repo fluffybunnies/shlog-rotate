@@ -50,5 +50,5 @@ If you use shlog-rotate on these files, you may want to disable the default rota
 ### Helper - util/s3_upload_instance_logfile.sh
 An example script that may be passed to shlog-rotate.sh to upload to s3 objects that are about to be rotated out of existance. This example assumes the host is an Amazon EC2 instance and names the target directory after its instance id.
 
-If you want to actually use this helper, create a file called ```_config.s3.local.sh``` inside ```util``` and export your s3 bucket name. The script assumes s3cmd is installed and in the contextual PATH.
+If you want to actually use this helper, create a file called ```_config.s3.local.sh``` inside ```util``` and export your s3 bucket name. The script assumes s3cmd is installed and in the contextual PATH. An example s3cmd install script can be found here: https://github.com/fluffybunnies/sire/blob/master/_common/s3.sh
 
