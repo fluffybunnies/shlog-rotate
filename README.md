@@ -1,7 +1,7 @@
 # shlog-rotate
 Log rotator (shell/bash)
 
-Detects nginx logs and resets file handler for smooth transition.
+Detects nginx logs and resets file handler for smooth transition. Pull requests are welcome to handle other applications' idiosyncrasies.
 
 
 ### Install
