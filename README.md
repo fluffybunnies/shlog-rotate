@@ -25,7 +25,9 @@ Send output to log file and rotate self
 
 
 ### Rotate and send files to s3 prior to deletion
-If the second argument ends in ".sh", instead of being rotated, it will be executed prior to log file deletion. 
+If the second argument ends in ".sh", instead of being rotated, it will be executed prior to log file deletion.
+
+An example use case would be to send the log file to s3.
 ```
 /root/scripts/node_modules/shlog-rotate/index.sh 10 /root/scripts/node_modules/util/s3_upload_instance_logfile.sh /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
 ```
