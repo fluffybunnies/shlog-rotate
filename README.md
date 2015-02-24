@@ -36,7 +36,7 @@ An example use case would be to send the log file to s3.
 ### Helper - util/kill_default_nginx_log_rotation.sh
 By default, many module's default installation will automatically rotate their logs using unix' logrotate utility (e.g. nginx, mysql, php, etc). You can check what's configured via ```ls /etc/logrotate.d```
 
-If you use shlog-rotate on these files, you may want to disable the default rotation to avoid confusion and data loss. kill_default_nginx_log_rotation.sh shows how to do so by providing an example that dsiables nginx's default log rotation.
+If you use shlog-rotate on these files, you may want to disable the default rotation to avoid confusion and data loss. kill_default_nginx_log_rotation.sh shows how to do so by providing an example that disables nginx's default log rotation.
 
 
 ### Helper - util/s3_upload_instance_logfile.sh
