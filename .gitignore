@@ -5,3 +5,4 @@ node_modules
 npm-debug.log
 config.local.sh
 _config.s3.local.sh
+test.log*

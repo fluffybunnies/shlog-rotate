@@ -5,10 +5,10 @@ logFilePath=$1
 dir=`dirname $0`
 . "$dir/_config.s3.sh"
 
-instanceId=`curl -s 'http://169.254.169.254/latest/meta-data/instance-id'`
+instanceId=`curl -s -m5 'http://169.254.169.254/latest/meta-data/instance-id'`
 if [ "$instanceId" == "" ]; then
-	echo "failed to get instance id"
-	exit 1
+	instanceId=$(date +"%Y%m%d_%H%M%S")
+	echo "failed to get instance id, defaulting to timestamp: $instanceId"
 fi
 
 logFileBasename=`basename "$logFilePath"`

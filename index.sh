@@ -2,6 +2,8 @@
 #
 # note: paths should be absolute, i stopped messing with realpath to keep logic simple
 #
+# Ex: ./index.sh 1 ./util/s3_upload_instance_logfile.sh ./test.log
+#
 
 date
 
