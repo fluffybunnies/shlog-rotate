@@ -2,7 +2,7 @@
 	"name": "shlog-rotate",
 	"description": "Log rotator (shell/bash)",
 	"keywords": ["log","rotate","rotator","shell","bash","nginx"],
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"author": "fluffybunnies",
 	"repository": {
 		"type": "git",
