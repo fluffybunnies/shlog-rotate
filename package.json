@@ -8,6 +8,7 @@
 		"type": "git",
 		"url": "git@github.com:fluffybunnies/shlog-rotate.git"
 	},
+	"main": "index.sh",
 	"dependencies": {
 	},
 	"devDependencies": {

@@ -13,21 +13,21 @@ npm install --prefix $installDir shlog-rotate
 ### Rotate single log file
 With backup limit of 10
 ```
-/root/scripts/node_modules/shlog-rotate.sh /var/log/nginx/access.log
+/root/scripts/node_modules/shlog-rotate/index.sh /var/log/nginx/access.log
 ```
 
 
 ### Rotate multiple log files
 Send output to log file and rotate self
 ```
-/root/scripts/node_modules/shlog-rotate.sh 10 /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
 ```
 
 
 ### Rotate and send files to s3 prior to deletion
 If the second argument ends in ".sh", instead of being rotated, it will be executed prior to log file deletion. 
 ```
-/root/scripts/node_modules/shlog-rotate.sh 10 /root/scripts/node_modules/util/s3_upload_instance_logfile.sh /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 /root/scripts/node_modules/util/s3_upload_instance_logfile.sh /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
 ```
 
 
