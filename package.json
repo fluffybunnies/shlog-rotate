@@ -1,0 +1,17 @@
+{
+	"name": "shlog-rotate",
+	"description": "Log rotator (shell/bash)",
+	"keywords": ["log","rotate","rotator","shell","bash"],
+	"version": "0.0.0",
+	"author": "fluffybunnies",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:fluffybunnies/shlog-rotate.git"
+	},
+	"dependencies": {
+	},
+	"devDependencies": {
+	},
+	"scripts": {
+	}
+}
