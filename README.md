@@ -32,7 +32,7 @@ If the second argument ends in ".sh", instead of being rotated, it will be execu
 
 
 ### Helper - util/kill_default_nginx_log_rotation.sh
-By default, a normal many module's default installation will automatically rotate their access and error logs (e.g. nginx, mysql, php, etc). You can check via ```ls /etc/logrotate.d```.
+By default, a many module's default installation will automatically rotate their access and error logs (e.g. nginx, mysql, php, etc). You can check via ```ls /etc/logrotate.d```.
 
 If you use shlog-rotate on these files, you may want to disable the default rotation to avoid confusion and data loss. kill_default_nginx_log_rotation.sh shows how to do so by providing an example that stops nginx's default log rotation.
 
