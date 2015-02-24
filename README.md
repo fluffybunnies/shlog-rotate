@@ -1,6 +1,8 @@
 # shlog-rotate
 Log rotator (shell/bash)
 
+Rotates once per execution. Useful in something like crontab once weekly/daily.
+
 Detects nginx logs and resets file handler for smooth transition. Pull requests are welcome to handle other applications' idiosyncrasies.
 
 
