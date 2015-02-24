@@ -1,5 +1,5 @@
 # shlog-rotate
-Log rotator (shell/bash)
+Simple log rotator (shell/bash)
 
 Rotates once per execution. Useful in something like crontab once weekly/daily.
 
