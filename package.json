@@ -1,7 +1,7 @@
 {
 	"name": "shlog-rotate",
 	"description": "Log rotator (shell/bash)",
-	"keywords": ["log","rotate","rotator","shell","bash"],
+	"keywords": ["log","rotate","rotator","shell","bash","nginx"],
 	"version": "0.0.0",
 	"author": "fluffybunnies",
 	"repository": {
