@@ -11,9 +11,9 @@ npm install --prefix $installDir shlog-rotate
 
 
 ### Rotate single log file
-With backup limit of 10
+Saving 10 rotations locally before falling off
 ```
-/root/scripts/node_modules/shlog-rotate/index.sh /var/log/nginx/access.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/nginx/access.log
 ```
 
 
