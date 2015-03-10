@@ -4,6 +4,7 @@
 	"keywords": ["simple","log","rotate","rotator","shell","bash","nginx"],
 	"version": "0.0.2",
 	"author": "fluffybunnies",
+	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:fluffybunnies/shlog-rotate.git"
