@@ -1,15 +1,15 @@
 #### 0.0.5 (2015-03-19)
 
 Features
-
-	* Add "start" and "end" to stdout
+- Add "start" and "end" to stdout
 
 
 
 #### 0.0.4 (2015-03-19)
 
 Features
-	* Use -h param instead of .sh extension for pre-deletion hook
+
+	- Use -h param instead of .sh extension for pre-deletion hook
 
 
 
