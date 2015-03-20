@@ -2,9 +2,10 @@
 #
 # note: paths should be absolute, i stopped messing with realpath to keep logic simple
 #
-# Ex: ./index.sh 1 ./util/s3_upload_instance_logfile.sh ./test.log
+# Ex: ./index.sh 1 -h ./util/s3_upload_instance_logfile.sh ./test.log
 #
 
+echo ''
 date
 
 maxFiles=$1
@@ -15,17 +16,12 @@ if ! [[ "$maxFiles" =~ $positiveInt ]]; then
 	exit 1
 fi
 
-if [ "`echo "$2" | grep '.sh'`" != "" ]; then
-	preDeletionHook=$2
-fi
-echo "preDeletionHook: $preDeletionHook"
-
 dropNginxFileHandler=0
 
 rotate(){
 	logFile=$1
 	maxFiles=$2
-	echo $'\n'"rotate() logFile=$logFile maxFiles=$maxFiles"
+	echo "rotate() logFile=$logFile maxFiles=$maxFiles"
 	for ((i=$maxFiles;i>=0;i--)); do
 		[ $i == 0 ] && suf='' || suf=".$i"
 		[ ! -f "$logFile$suf" ] && continue
@@ -54,12 +50,16 @@ rotate(){
 n=0
 for arg in "$@"; do
 	n=$[n+1]
-	argsToSkip=1
-	if [ "$preDeletionHook" != "" ]; then
-		argsToSkip=2
+	[ $n == 1 ] && continue
+	if [ "$arg" == "-h" ]; then
+		nextArgIsPreDeletionHook=1
+		n=$[n-1]
+	elif [ "$nextArgIsPreDeletionHook" != "" ]; then
+		preDeletionHook=$arg; unset nextArgIsPreDeletionHook
+		n=$[n-1]
+	else
+		rotate "$arg" $maxFiles
 	fi
-	[ $n -le $argsToSkip ] && continue
-	rotate "$arg" $maxFiles
 done
 
 if [ "$dropNginxFileHandler" == "1" ]; then
@@ -72,3 +72,4 @@ if [ "$dropNginxFileHandler" == "1" ]; then
 fi
 
 date
+echo ''
