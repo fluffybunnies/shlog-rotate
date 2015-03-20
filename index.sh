@@ -5,8 +5,7 @@
 # Ex: ./index.sh 1 -h ./util/s3_upload_instance_logfile.sh ./test.log
 #
 
-echo ''
-date
+echo $'\nshlog-rotate start '`date`
 
 maxFiles=$1
 
@@ -69,5 +68,4 @@ if [ "$dropNginxFileHandler" == "1" ]; then
 	fi
 fi
 
-date
-echo ''
+echo 'shlog-rotate end '`date`$'\n'
