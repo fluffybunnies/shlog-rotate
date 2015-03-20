@@ -52,11 +52,9 @@ for arg in "$@"; do
 	n=$[n+1]
 	[ $n == 1 ] && continue
 	if [ "$arg" == "-h" ]; then
-		nextArgIsPreDeletionHook=1
-		n=$[n-1]
+		nextArgIsPreDeletionHook=1; n=$[n-1]
 	elif [ "$nextArgIsPreDeletionHook" != "" ]; then
-		preDeletionHook=$arg; unset nextArgIsPreDeletionHook
-		n=$[n-1]
+		preDeletionHook=$arg; unset nextArgIsPreDeletionHook; n=$[n-1]
 	else
 		rotate "$arg" $maxFiles
 	fi
