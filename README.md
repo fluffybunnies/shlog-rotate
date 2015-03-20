@@ -39,13 +39,22 @@ Send output to its own log file and rotate self. I often use this for a one-line
 
 
 ### Rotate and send files to s3 prior to deletion
-If the second argument ends in ".sh", instead of being rotated, it will be executed prior to log file deletion.
+You may pass a script through -h that will be executed prior to log file deletion. Its first argument will be the path to the file about to be unlinked.
 
 An example use case would be to send the log file to s3.
 ```
 /root/scripts/node_modules/shlog-rotate/index.sh 10 \
-/root/scripts/node_modules/util/s3_upload_instance_logfile.sh \
+-h /root/scripts/node_modules/util/s3_upload_instance_logfile.sh \
 /var/log/nginx/access.log /var/www/mysite/out/app.log \
+>> /var/log/logrotate.log 2>&1
+```
+
+The arguments are read in order; -h may be placed in the middle so that only logs to the right passed to the hook.
+```
+/root/scripts/node_modules/shlog-rotate/index.sh 10 \
+/var/log/just_delete_me.log \
+-h /root/scripts/node_modules/util/s3_upload_instance_logfile.sh \
+/var/log/send_me_to_s3_first.log \
 >> /var/log/logrotate.log 2>&1
 ```
 
