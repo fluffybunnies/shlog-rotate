@@ -24,11 +24,15 @@ Saving 10 rotations locally before falling off
 ### Rotate multiple log files
 Send output to its own log file
 ```
-/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/nginx/access.log /var/www/mysite/out/app.log 2>&1 >> /var/log/logrotate.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 \
+/var/log/nginx/access.log /var/www/mysite/out/app.log \
+>> /var/log/logrotate.log 2>&1
 ```
 Send output to its own log file and rotate self. I often use this for a one-liner solution, but it would be preferable to cron a second that rotates the logrotate log.
 ```
-/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log 2>&1 >> /var/log/logrotate.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 \
+/var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log \
+>> /var/log/logrotate.log 2>&1
 ```
 
 
@@ -37,7 +41,9 @@ If the second argument ends in ".sh", instead of being rotated, it will be execu
 
 An example use case would be to send the log file to s3.
 ```
-/root/scripts/node_modules/shlog-rotate/index.sh 10 /root/scripts/node_modules/util/s3_upload_instance_logfile.sh /var/log/nginx/access.log /var/www/mysite/out/app.log 2>&1 >> /var/log/logrotate.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 \
+/root/scripts/node_modules/util/s3_upload_instance_logfile.sh /var/log/nginx/access.log /var/www/mysite/out/app.log \
+>> /var/log/logrotate.log 2>&1
 ```
 
 
