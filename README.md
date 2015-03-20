@@ -19,7 +19,7 @@ npm install --prefix $installDir shlog-rotate
 ### Rotate single log file
 Saving 10 rotations locally before falling off
 ```
-/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/nginx/access.log
+/root/scripts/node_modules/shlog-rotate/index.sh 10 /var/log/access.log
 ```
 
 
@@ -27,13 +27,13 @@ Saving 10 rotations locally before falling off
 Send output to its own log file
 ```
 /root/scripts/node_modules/shlog-rotate/index.sh 10 \
-/var/log/nginx/access.log /var/www/mysite/out/app.log \
+/var/log/access.log /var/www/mysite/out/app.log \
 >> /var/log/logrotate.log 2>&1
 ```
 Send output to its own log file and rotate self. I often use this for a one-liner solution, but it would be preferable to cron a second that rotates the logrotate log.
 ```
 /root/scripts/node_modules/shlog-rotate/index.sh 10 \
-/var/log/nginx/access.log /var/www/mysite/out/app.log /var/log/logrotate.log \
+/var/log/access.log /var/www/mysite/out/app.log /var/log/logrotate.log \
 >> /var/log/logrotate.log 2>&1
 ```
 
@@ -45,7 +45,7 @@ An example use case would be to send the log file to s3.
 ```
 /root/scripts/node_modules/shlog-rotate/index.sh 10 \
 -h /root/scripts/node_modules/util/s3_upload_instance_logfile.sh \
-/var/log/nginx/access.log /var/www/mysite/out/app.log \
+/var/log/access.log /var/www/mysite/out/app.log \
 >> /var/log/logrotate.log 2>&1
 ```
 
