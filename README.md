@@ -3,7 +3,7 @@ Simple log rotator (shell/bash)
 
 Rotates once per execution. Useful in something like crontab once weekly/daily.
 
-Accepts optional # rotations to keep and pre-deletion hook.
+Accepts # rotations to keep locally and an optional pre-deletion hook.
 
 Detects nginx logs and resets file handler for smooth transition. Pull requests are welcome to handle other applications' idiosyncrasies.
 
