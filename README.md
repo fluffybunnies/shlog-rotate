@@ -39,7 +39,7 @@ Send output to its own log file and rotate self. I often use this for a one-line
 
 
 ### Rotate and send files to s3 prior to deletion
-You may pass a script through `-h` that will be executed prior to log file deletion. Its first argument will be the path to the file about to be unlinked.
+You may pass a script through `-h`, which will be executed prior to log file deletion. Its first argument will be the path to the file about to be unlinked.
 
 An example use case would be to send the log file to s3.
 ```bash
@@ -49,7 +49,7 @@ An example use case would be to send the log file to s3.
 >> /var/log/logrotate.log 2>&1
 ```
 
-The arguments are read in order; `-h` may be placed in the middle so that only files following `-h` are passed to the hook. In the example below, `send_me_to_s3_first.log` is passed to `s3_upload_instance_logfile.sh`, while `just_delete_me.log` is only rotated.
+The arguments are read in order; `-h` may be placed in the middle so that only files following it are passed to the hook. In the example below, `send_me_to_s3_first.log` is passed to `s3_upload_instance_logfile.sh`, while `just_delete_me.log` is only rotated.
 ```bash
 /root/scripts/node_modules/shlog-rotate/index.sh 10 \
 /var/log/just_delete_me.log \
@@ -66,7 +66,7 @@ If you use shlog-rotate on these files, you may want to disable the default rota
 
 
 ### Helper - util/s3_upload_instance_logfile.sh
-An example script that may be passed to shlog-rotate.sh to upload to s3 objects that are about to be rotated out of existance. This example assumes the host is an Amazon EC2 instance and names the target directory after its instance id.
+An example script that may be passed to shlog-rotate.sh. It will ship objects that are about to be rotated out of existance to s3. This example assumes the host is an Amazon EC2 instance and names the target directory after its instance id.
 
 If you want to actually use this helper, create a file called `_config.s3.local.sh` inside `util/` and export your s3 bucket name. The script assumes s3cmd is installed and in the contextual PATH. An example s3cmd install script can be found here: [https://github.com/fluffybunnies/sire/blob/master/_common/s3.sh](https://github.com/fluffybunnies/sire/blob/master/_common/s3.sh)
 
