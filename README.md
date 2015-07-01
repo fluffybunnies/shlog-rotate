@@ -70,3 +70,10 @@ An example script that may be passed to shlog-rotate.sh. It will ship objects th
 
 If you want to actually use this helper, create a file called `_config.s3.local.sh` inside `util/` and export your s3 bucket name. The script assumes s3cmd is installed and in the contextual PATH. An example s3cmd install script can be found here: [https://github.com/fluffybunnies/sire/blob/master/_common/s3.sh](https://github.com/fluffybunnies/sire/blob/master/_common/s3.sh)
 
+
+
+### To Do
+- Option to run script post-rotation as well (instead of just pre-deletion)
+	- Use case: I want my logs in s3 immediately, not just when they are about to fall off locally
+
+
